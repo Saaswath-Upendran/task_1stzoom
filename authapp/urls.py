@@ -4,5 +4,5 @@ from .views import *
 app_name = 'authapp'
 
 urlpatterns = [
-    path('',Homepage,name='home')
+    path('',HomeView.as_view(),name='home')
 ]

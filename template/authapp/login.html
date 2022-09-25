@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% load bootstrap5 %}
+{% block title %}Login Page{% endblock title %}
+
+{% block body %} 
+
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <br>
+    <hr/>
+    <p><strong>-- OR --</strong></p>
+    <a href="{% url 'social:begin' 'github' %}">Login with github</a>
+{% endblock  %}
